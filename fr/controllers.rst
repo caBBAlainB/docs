@@ -394,7 +394,7 @@ L'URL généré serait:
 
     http://www.example.com/orders/confirm?product=pizza&quantity=5#top
 
-Paginer a Model
+Paginer un Model
 ===============
 
 .. php:method:: paginate()
