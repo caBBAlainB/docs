@@ -508,7 +508,7 @@ property representing the identifier for the parent item::
         ['id' => 3, 'parent_id' => 1, 'name' => 'Eagle'],
         ['id' => 4, 'parent_id' => 1, 'name' => 'Seagull'],
         ['id' => 5, 'parent_id' => 6, 'name' => 'Clown Fish'],
-        ['id' => 6, 'parent_id' => null], 'name' => 'Fish'],
+        ['id' => 6, 'parent_id' => null, 'name' => 'Fish'],
     ]);
 
     $collection->nest('id', 'parent_id')->toArray();
@@ -570,7 +570,7 @@ flatten it::
 By default, the tree is traversed from the root to the leaves. You can also
 instruct it to only return the leaf elements in the tree::
 
-    $nested->listNested()->toArray();
+    $nested->listNested()->toArray(); !?? How did you get the following result? I tried $nested->listNested('leaves')->toArray(); it didn't return the expected result. And are you sure that 'id' => 2 is supposed to desappear?
 
     // Returns
     [
