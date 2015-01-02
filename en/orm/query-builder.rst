@@ -18,8 +18,10 @@ of the following things occur:
 - The query is iterated with ``foreach()``.
 - The query's ``execute()`` method is called. This will return the underlying
   statement object, and is to be used with insert/update/delete queries.
+- The query's ``fisrt()`` method is called. This will return the first result of the set
+  built by the ``SELECT`` statement (it adds LIMIT 1 to the query).
 - The query's ``all()`` method is called. This will return the result set and
-  can only be used with select statements.
+  can only be used with ``SELECT`` statements.
 - The query's ``toArray()`` method is called.
 
 Until one of these conditions are met, the query can be modified with additional
@@ -516,7 +518,7 @@ Automatically Creating IN Clauses
 
 When building queries using the ORM, you will generally not have to indicate the
 data types of the columns you are interacting with, as CakePHP can infer the
-types based on the schema data. If in your queries you'd like CakePHP to
+types based on the :ref:`schéma <namespace-Cake\Database\Schema>` data. If in your queries you'd like CakePHP to
 automatically convert equality to ``IN`` comparisons, you'll need to indicate
 the column data type::
 
