@@ -449,7 +449,7 @@ delete for those not in the list::
 
     // In a controller.
     $comments = TableRegistry::get('Comments');
-    $present = (new Collection($entity->comments))->extract('id');
+    $present = (new Collection($entity->comments))->extract('id')->toArray();
     $comments->deleteAll([
         'article_id' => $article->id,
         'id NOT IN' => $present
