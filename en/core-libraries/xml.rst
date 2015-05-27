@@ -163,9 +163,15 @@ After you have created your XML document, you just use the native interfaces for
 your document type to add, remove, or manipulate child nodes::
 
     // Using SimpleXML
-    $myXmlOriginal = '<?xml version="1.0"?><root><child>value</child></root>';
+    $myXmlOriginal = '<?xml version="1.0"?><dad><child>value</child></dad>';
     $xml = Xml::build($myXmlOriginal);
-    $xml->root->addChild('young', 'new value');
+    $xml->addChild('young', 'new value'); // you cannot use root element, here 'dad' as reference
+
+or, 
+
+    $xml->addChild('youngs');
+    $xml->youngs->addChild('young', 'new value');
+    $xml->youngs->addChild('young', 'other value');
 
     // Using DOMDocument
     $myXmlOriginal = '<?xml version="1.0"?><root><child>value</child></root>';
